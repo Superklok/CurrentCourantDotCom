@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Articles</title>
+</head>
+<body>
+	<h1>All Articles</h1>
+	<div>
+		<a href="/articles/new">Publish Article</a>
+	</div>
+	<ul>
+		<% for (let article of articles){ %>
+			<li><a href="/articles/<%= article._id %>"><%= article.title %></a></li></li>
+		<% } %>
+	</ul>
+</body>
+</html>
