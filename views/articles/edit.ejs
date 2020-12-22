@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Edit Article</title>
-</head>
-<body>
-	<form action="/articles/<%=article._id%>?_method=PUT" method="POST">
-		<div>
-			<label for="title">Title</label>
-			<input type="text" id="title" name="article[title]" value="<%=article.title%>">
-		</div>
-		<div>
-			<label for="content">Content</label>
-			<input type="text" id="content" name="article[content]" value="<%=article.content%>">
-		</div>
-		<button>Update Article</button>
-	</form>
+<% layout('layouts/boilerplate') %>
+<form action="/articles/<%=article._id%>?_method=PUT" method="POST">
 	<div>
-		<a href="/articles/<%= article._id %>">Back To Article</a>
+		<label for="title">Title</label>
+		<input type="text" id="title" name="article[title]" value="<%=article.title%>">
 	</div>
-</body>
-</html>
+	<div>
+		<label for="content">Content</label>
+		<input type="text" id="content" name="article[content]" value="<%=article.content%>">
+	</div>
+	<button>Update Article</button>
+</form>
+<div>
+	<a href="/articles/<%= article._id %>">Back To Article</a>
+</div>
