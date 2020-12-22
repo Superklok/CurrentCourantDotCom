@@ -1,15 +1,23 @@
 <% layout('layouts/boilerplate') %>
-<h1><%= article.title %></h1>
-<img src="<%= article.image %>" alt="">
-<h2><%= article.content %></h2>
-<p>
-	<a href="/articles/<%=article._id%>/edit">Edit</a>
-</p>
-<p>
-	<form action="/articles/<%=article._id%>?_method=DELETE" method="POST">
-		<button>Delete</button>
-	</form>
-</p>
-<div>
-	<a href="/articles">All Articles</a>
+<div class="row">
+	<div class="col-6 offset-3">
+		<div class="card mb-3">
+			<div class="card-body">
+				<h5 class="card-title"><%= article.title %></h5>
+			</div>
+			<img src="<%= article.image %>" class="card-img-top" alt="...">
+			<div class="card-body">
+				<p class="card-text"><%= article.content %></p>
+			</div>
+			<div class="card-body">
+				<a class="card-link btn btn-dark" href="/articles/<%=article._id%>/edit">Edit</a>
+				<form class="d-inline" action="/articles/<%=article._id%>?_method=DELETE" method="POST">
+					<button class="btn btn-dark">Delete</button>
+				</form>
+			</div>
+			<div class="card-footer">
+				<a class="btn btn-dark" href="/articles">All Articles</a>
+			</div>
+		</div>
+	</div>
 </div>
