@@ -22,7 +22,8 @@ const seedDB = async () => {
 	for(let i = 0; i < 12; i++){
 		const article = new Article({
 			title: `${sample(adjectives)} ${sample(subjects)}`,
-			content: `${sample(content)}`
+			content: `${sample(content)}`,
+			image: 'https://source.unsplash.com/collection/288926'
 		})
 		await article.save();
 	}
