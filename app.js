@@ -2,11 +2,12 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const {articleSchema} = require('./schemas.js');
+const {articleSchema, reviewSchema} = require('./schemas.js');
 const catchAsync = require('./HELPeR/catchAsync');
 const ExpressError = require('./HELPeR/ExpressError');
 const methodOverride = require('method-override');
 const Article = require('./models/article');
+const Review = require('./models/review');
 
 mongoose.connect('mongodb://localhost:27017/currentcourantdotcom', {
 	useNewUrlParser: true,
@@ -39,6 +40,16 @@ const validateArticle = (req, res, next) => {
 	}
 }
 
+const validateReview = (req, res, next) => {
+	const {error} = reviewSchema.validate(req.body);
+	if(error){
+		const msg = error.details.map(el => el.message).join(',')
+		throw new ExpressError(msg, 400)
+	} else {
+		next();
+	}
+}
+
 app.get('/', (req, res) => {
 	res.render('home')
 });
@@ -59,7 +70,7 @@ app.post('/articles', validateArticle, catchAsync(async (req, res, next) => {
 }));
 
 app.get('/articles/:id', catchAsync(async(req, res) => {
-	const article = await Article.findById(req.params.id)
+	const article = await Article.findById(req.params.id).populate('reviews');
 	res.render('articles/show', {article});
 }));
 
@@ -78,6 +89,22 @@ app.delete('/articles/:id', catchAsync(async (req, res) => {
 	const {id} = req.params;
 	await Article.findByIdAndDelete(id);
 	res.redirect('/articles');
+}));
+
+app.post('/articles/:id/reviews', validateReview, catchAsync(async (req, res) => {
+	const article = await Article.findById(req.params.id);
+	const review = new Review(req.body.review);
+	article.reviews.push(review);
+	await review.save();
+	await article.save();
+	res.redirect(`/articles/${article._id}`);
+}));
+
+app.delete('/articles/:id/reviews/:reviewId', catchAsync(async (req, res) => {
+	const {id, reviewId} = req.params;
+	await Article.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+	await Review.findByIdAndDelete(reviewId);
+	res.redirect(`/articles/${id}`);
 }));
 
 app.all('*', (req, res, next) => {
