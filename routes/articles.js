@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const catchAsync = require('../HELPeR/catchAsync');
 const {articleSchema} = require('../schemas.js');
+const {isLoggedIn} = require('../middleware');
 const ExpressError = require('../HELPeR/ExpressError');
 const Article = require('../models/article');
 
@@ -20,11 +21,11 @@ router.get('/', catchAsync(async (req, res) => {
 	res.render('articles/index', {articles})
 }));
 
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
 	res.render('articles/new');
 });
 
-router.post('/', validateArticle, catchAsync(async (req, res, next) => {
+router.post('/', isLoggedIn, validateArticle, catchAsync(async (req, res, next) => {
 	const article = new Article(req.body.article);
 	await article.save();
 	req.flash('success', 'Successfully posted a new article!');
@@ -40,7 +41,7 @@ router.get('/:id', catchAsync(async(req, res) => {
 	res.render('articles/show', {article});
 }));
 
-router.get('/:id/edit', catchAsync(async (req, res) => {
+router.get('/:id/edit', isLoggedIn, catchAsync(async (req, res) => {
 	const article = await Article.findById(req.params.id)
 	if(!article){
 		req.flash('error', 'Unable to find that article!');
@@ -49,14 +50,14 @@ router.get('/:id/edit', catchAsync(async (req, res) => {
 	res.render('articles/edit', {article});
 }));
 
-router.put('/:id', validateArticle, catchAsync(async (req, res) => {
+router.put('/:id', isLoggedIn, validateArticle, catchAsync(async (req, res) => {
 	const {id} = req.params;
 	const article = await Article.findByIdAndUpdate(id, {...req.body.article});
 	req.flash('success', 'Successfully updated article!');
 	res.redirect(`/articles/${article._id}`)
 }));
 
-router.delete('/:id', catchAsync(async (req, res) => {
+router.delete('/:id', isLoggedIn, catchAsync(async (req, res) => {
 	const {id} = req.params;
 	await Article.findByIdAndDelete(id);
 	req.flash('success', 'Article successfully deleted!');
