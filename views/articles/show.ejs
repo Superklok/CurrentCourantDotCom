@@ -4,23 +4,27 @@
 		<div class="card mb-3">
 			<div class="card-body">
 				<h5 class="card-title"><%= article.title %></h5>
+				<p class="card-text"><i><%= article.author.username %> wrote this article</i></p>
 			</div>
 			<img src="<%= article.image %>" class="card-img-top" alt="...">
 			<div class="card-body">
 				<p class="card-text"><%= article.content %></p>
 			</div>
+			<% if (currentUser && article.author.equals(currentUser._id)) { %>
 			<div class="card-body">
 				<a class="card-link btn btn-dark" href="/articles/<%=article._id%>/edit">Edit</a>
 				<form class="d-inline" action="/articles/<%=article._id%>?_method=DELETE" method="POST">
 					<button class="btn btn-dark">Delete</button>
 				</form>
 			</div>
+			<% } %>
 			<div class="card-footer">
 				<a class="btn btn-dark" href="/articles">All Articles</a>
 			</div>
 		</div>
 	</div>
 	<div class="col-6">
+		<% if (currentUser) { %>
 		<h2>Leave Your Review</h2>
 		<form action="/articles/<%=article._id%>/reviews" method="POST" class="mb-3 validateForm" novalidate>
 			<div class="mb-3">
@@ -36,14 +40,17 @@
 			</div>
 			<button class="btn btn-dark">Submit</button>
 		</form>
+		<% } %>
 		<% for(let review of article.reviews) { %>
 		<div class="card mb-3">
 			<div class="card-body">
 				<h5 class="card-title">Rating: <%= review.rating %></h5>
-				<p class="card-text">Review: <%= review.body %></p>
+				<p class="card-text"><%= review.author.username %> said "<%= review.body %>"</p>
+				<% if (currentUser && review.author.equals(currentUser._id)) { %>
 				<form action="/articles/<%=article._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
 					<button class="btn btn-sm btn-dark">Delete</button>
 				</form>
+				<% } %>
 			</div>
 		</div>
 		<% } %>

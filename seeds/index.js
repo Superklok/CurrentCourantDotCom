@@ -21,6 +21,7 @@ const seedDB = async () => {
 	await Article.deleteMany({});
 	for(let i = 0; i < 12; i++){
 		const article = new Article({
+			author: '5fe508914e17b637a01bb7ef',
 			title: `${sample(adjectives)} ${sample(subjects)}`,
 			content: `${sample(content)}`,
 			image: 'https://source.unsplash.com/collection/288926'
