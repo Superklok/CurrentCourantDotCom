@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+	require('dotenv').config();
+}
+
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -9,7 +13,6 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
-
 const userRoutes = require('./routes/users');
 const articleRoutes = require('./routes/articles');
 const reviewRoutes = require('./routes/reviews');
@@ -38,7 +41,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')))
 
 const sessionConfig = {
-	secret: 'tellEveryoneYouKnowThatThisSecretIsForDevelopmentONLY',
+	secret: process.env.SESSION_SECRET,
 	resave: false,
 	saveUninitialized: true,
 	cookie: {

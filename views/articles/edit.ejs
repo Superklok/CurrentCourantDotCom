@@ -2,7 +2,7 @@
 <div class="row">
 	<h1 class="text-center">Edit Article</h1>
 	<div class="col-6 offset-3">
-		<form action="/articles/<%=article._id%>?_method=PUT" method="POST" novalidate class="validateForm">
+		<form action="/articles/<%=article._id%>?_method=PUT" method="POST" novalidate class="validateForm" enctype="multipart/form-data">
 			<div class="mb-3">
 				<label class="form-label" for="title">Title</label>
 				<input class="form-control" type="text" id="title" name="article[title]" value="<%=article.title%>" required>
@@ -11,11 +11,8 @@
 				</div>
 			</div>
 			<div class="mb-3">
-				<label class="form-label" for="image">Image URL</label>
-				<input class="form-control" type="text" id="image" name="article[image]" value="<%=article.image%>" required>
-				<div class="valid-feedback">
-					Looks great!
-				</div>
+				<label for="image" class="form-label">Add image(s)...</label>
+				<input class="form-control" type="file" id="image" multiple name="image">
 			</div>
 			<div class="mb-3">
 				<label class="form-label" for="content">Content</label>
@@ -23,6 +20,15 @@
 				<div class="valid-feedback">
 					Delightful piece!
 				</div>
+			</div>
+			<div class="mb-3">
+				<% article.images.forEach(function(img, i) { %>
+				<img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+				<div class="form-check-inline">
+					<input type="checkbox" id="image-<%= i %>" name="destroyImg[]" value="<%= img.filename %>">
+				</div>
+				<label for="image-<%= i %>">Delete</label>
+				<% }) %>
 			</div>
 			<div class="mb-3">
 				<button class="btn btn-dark">Update Article</button>
