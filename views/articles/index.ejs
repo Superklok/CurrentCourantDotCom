@@ -1,21 +1,23 @@
 <% layout('layouts/boilerplate') %>
-<h1>All Articles</h1>
-<div>
-	<a class="btn btn-dark" href="/articles/new">Publish Article</a>
-</div>
-<% for (let article of articles){ %>
-	<div class="card mb-3">
-		<div class="row">
-			<div class="col-md-4">
-				<img class="img-fluid" alt="" src="<%= article.images[0].url %>">
-			</div>
-			<div class="col-md-8">
-				<div class="card-body">
-					<h5 class="card-title"><%= article.title %></h5>
-					<p class="card-text"><%= article.content %></p>
-					<a class="btn btn-dark" href="/articles/<%= article._id %>">Read <%= article.title %></a>
-				</div>
+<h1 class="text-center lgText brandFont mb-5">The Current Courant</h1>
+<hr>
+<a class="ccBtn navText ms-2 me-3 my-2" href="/articles/new">Contribute</a>
+<hr class="mb-5">
+<div class="row">
+	<% for (let article of articles){ %>
+	<div class="col-md-6 col-lg-4 col-xl-3">
+		<div class="card mb-3">
+			<% if (article.images.length) { %>
+			<img class="img-fluid" alt="" src="<%= article.images[0].url %>">
+			<% } else { %>
+			<img class="img-fluid" alt="" src="">
+			<% } %>
+			<div class="card-body">
+				<h5 class="card-title mdText contentFont"><%= article.title %></h5>
+				<p class="card-text smText contentFont"><%= article.content.substring(0, 300) %>...</p>
+				<a class="ccBtn mdBtn" href="/articles/<%= article._id %>">Read More</a>
 			</div>
 		</div>
 	</div>
-<% } %>
+	<% } %>
+</div>

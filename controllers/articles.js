@@ -15,7 +15,7 @@ module.exports.createArticle = async (req, res, next) => {
 	article.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
 	article.author = req.user._id;
 	await article.save();
-	req.flash('success', 'Successfully posted a new article!');
+	req.flash('success', 'Successfully published a new article!');
 	res.redirect(`/articles/${ article._id }`);
 }
 
@@ -27,7 +27,7 @@ module.exports.showArticle = async(req, res) => {
 		}
 	}).populate('author');
 	if (!article) {
-		req.flash('error', 'Unable to find that article!');
+		req.flash('error', 'Sorry, the article you requested cannot be found.');
 		return res.redirect('/articles');
 	}
 	res.render('articles/show', { article });
@@ -37,7 +37,7 @@ module.exports.renderEditForm = async (req, res) => {
 	const { id } = req.params;
 	const article = await Article.findById(id)
 	if (!article) {
-		req.flash('error', 'Unable to find that article!');
+		req.flash('error', 'Sorry, the article you requested cannot be found.');
 		return res.redirect('/articles');
 	}
 	res.render('articles/edit', { article });

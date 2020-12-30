@@ -1,41 +1,45 @@
 <% layout('layouts/boilerplate') %>
 <div class="row">
-	<h1 class="text-center">Edit Article</h1>
-	<div class="col-6 offset-3">
-		<form action="/articles/<%=article._id%>?_method=PUT" method="POST" novalidate class="validateForm" enctype="multipart/form-data">
-			<div class="mb-3">
-				<label class="form-label" for="title">Title</label>
-				<input class="form-control" type="text" id="title" name="article[title]" value="<%=article.title%>" required>
-				<div class="valid-feedback">
-					Sounds good!
+	<div class="card shadow">
+		<div class="card-body">
+			<h1 class="text-center mdText contentFont">Edit Article</h1>
+			<div class="col-lg-6 offset-lg-3 col-xl-8 offset-xl-2">
+				<form action="/articles/<%=article._id%>?_method=PUT" method="POST" novalidate class="validateForm" enctype="multipart/form-data">
+					<div class="mb-3">
+						<label class="form-label smText contentFont" for="title">Title</label>
+						<input class="form-control" type="text" id="title" name="article[title]" value="<%=article.title%>" autofocus required>
+						<div class="valid-feedback">
+							Sounds good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="image" class="form-label smText contentFont">Add image(s)...</label>
+						<input class="form-control" type="file" id="image" multiple name="image">
+					</div>
+					<div class="mb-3">
+						<label class="form-label smText contentFont" for="content">Content</label>
+						<textarea class="form-control" type="text" id="content" name="article[content]" required><%= article.content %></textarea>
+						<div class="valid-feedback">
+							Delightful piece!
+						</div>
+					</div>
+					<div class="mb-3">
+						<% article.images.forEach(function(img, i) { %>
+						<img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
+						<div class="form-check-inline">
+							<input type="checkbox" id="image-<%= i %>" name="destroyImg[]" value="<%= img.filename %>">
+						</div>
+						<label class="ccBtn mdBtn" for="image-<%= i %>">Delete</label>
+						<% }) %>
+					</div>
+					<div class="mb-3">
+						<button class="ccBtn mdBtn">Update Article</button>
+					</div>
+				</form>
+				<div>
+					<a class="ccBtn mdBtn" href="/articles/<%= article._id %>">Back To Article</a>
 				</div>
 			</div>
-			<div class="mb-3">
-				<label for="image" class="form-label">Add image(s)...</label>
-				<input class="form-control" type="file" id="image" multiple name="image">
-			</div>
-			<div class="mb-3">
-				<label class="form-label" for="content">Content</label>
-				<textarea class="form-control" type="text" id="content" name="article[content]" required><%= article.content %></textarea>
-				<div class="valid-feedback">
-					Delightful piece!
-				</div>
-			</div>
-			<div class="mb-3">
-				<% article.images.forEach(function(img, i) { %>
-				<img src="<%= img.thumbnail %>" class="img-thumbnail" alt="">
-				<div class="form-check-inline">
-					<input type="checkbox" id="image-<%= i %>" name="destroyImg[]" value="<%= img.filename %>">
-				</div>
-				<label for="image-<%= i %>">Delete</label>
-				<% }) %>
-			</div>
-			<div class="mb-3">
-				<button class="btn btn-dark">Update Article</button>
-			</div>
-		</form>
-		<div>
-			<a class="btn btn-dark" href="/articles/<%= article._id %>">Back To Article</a>
 		</div>
 	</div>
 </div>

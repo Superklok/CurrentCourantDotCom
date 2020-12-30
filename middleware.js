@@ -5,7 +5,7 @@ const Review = require('./models/review');
 
 module.exports.isLoggedIn = (req, res, next) => {
 	if (!req.isAuthenticated()) {
-		req.flash('error', 'You must be logged in to do that!');
+		req.flash('error', 'Only registered authors are able to do that.');
 		return res.redirect('/login');
 	}
 	next();
@@ -25,7 +25,7 @@ module.exports.isAuthor = async (req, res, next) => {
 	const {id} = req.params;
 	const article = await Article.findById(id);
 	if (!article.author.equals(req.user._id)) {
-		req.flash('error', 'You do not have permission to do that!');
+		req.flash('error', 'Please log in as the author who published this article to do that.');
 		return res.redirect(`/articles/${id}`);
 	}
 	next();
@@ -35,7 +35,7 @@ module.exports.isReviewer = async (req, res, next) => {
 	const {id, reviewId} = req.params;
 	const review = await Review.findById(reviewId);
 	if (!review.author.equals(req.user._id)) {
-		req.flash('error', 'You do not have permission to do that!');
+		req.flash('error', 'Please log in as the author who left this review to do that.');
 		return res.redirect(`/articles/${id}`);
 	}
 	next();

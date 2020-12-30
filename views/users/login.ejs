@@ -1,19 +1,29 @@
 <% layout('layouts/boilerplate') %>
-<h1>Author's Entrance</h1>
-<form action="/login" method="POST" class="validateForm" novalidate>
-	<div class="mb-3">
-		<label class="form-label" for="username">Username</label>
-		<input class="form-control" type="text" id="username" name="username" required>
-		<div class="valid-feedback">
-			Sounds good!
+<div class="container justify-content-center align-items-center mt-5">
+	<div class="row">
+		<div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+			<div class="card mb-3 shadow">
+				<div class="card-body">
+					<h5 class="card-title text-center mdText contentFont mb-3">Author's Entrance</h5>
+					<form action="/login" method="POST" class="validateForm" novalidate>
+						<div class="mb-3">
+							<label class="form-label smText contentFont" for="username">Username</label>
+							<input class="form-control" type="text" id="username" name="username" placeholder="Username" autofocus required>
+							<div class="valid-feedback">
+								Sounds good!
+							</div>
+						</div>
+						<div class="mb-3">
+							<label class="form-label smText contentFont" for="password">Password</label>
+							<input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
+							<div class="valid-feedback">
+								Excellent!
+							</div>
+						</div>
+						<button class="ccBtn mdBtn w-100">Login</button>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="mb-3">
-		<label class="form-label" for="password">Password</label>
-		<input class="form-control" type="password" id="password" name="password" required>
-		<div class="valid-feedback">
-			Excellent!
-		</div>
-	</div>
-	<button class="btn btn-dark">Login</button>
-</form>
+</div>

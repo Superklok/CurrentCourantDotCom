@@ -1,35 +1,39 @@
 <% layout('layouts/boilerplate') %>
 <div class="row">
-	<h1 class="text-center">New Article</h1>
-	<div class="col-6 offset-3">
-		<form action="/articles" method="POST" novalidate class="validateForm" enctype="multipart/form-data">
-			<div class="mb-3">
-				<label class="form-label" for="title">Title</label>
-				<input class="form-control" type="text" id="title" name="article[title]" required>
-				<div class="valid-feedback">
-					Sounds good!
+	<div class="card shadow">
+		<div class="card-body">
+			<h1 class="text-center mdText contentFont">New Article</h1>
+			<div class="col-lg-6 offset-lg-3 col-xl-8 offset-xl-2">
+				<form action="/articles" method="POST" novalidate class="validateForm" enctype="multipart/form-data">
+					<div class="mb-3">
+						<label class="form-label smText contentFont" for="title">Title</label>
+						<input class="form-control" type="text" id="title" name="article[title]" placeholder="Title" autofocus required>
+						<div class="valid-feedback">
+							Sounds good!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="image" class="form-label smText contentFont">Choose image(s)...</label>
+						<input class="form-control" type="file" id="image" multiple name="image" required>
+						<div class="valid-feedback">
+							Looks great!
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="form-label smText contentFont" for="content">Content</label>
+						<textarea class="form-control" type="text" id="content" name="article[content]" required></textarea>
+						<div class="valid-feedback">
+							Delightful piece!
+						</div>
+					</div>
+					<div class="mb-3">
+						<button class="ccBtn mdBtn">Publish Article</button>
+					</div>
+				</form>
+				<div>
+					<a class="ccBtn mdBtn" href="/articles">All Articles</a>
 				</div>
 			</div>
-			<div class="mb-3">
-				<label for="image" class="form-label">Choose image(s)...</label>
-				<input class="form-control" type="file" id="image" multiple name="image" required>
-				<div class="valid-feedback">
-					Looks great!
-				</div>
-			</div>
-			<div class="mb-3">
-				<label class="form-label" for="content">Content</label>
-				<textarea class="form-control" type="text" id="content" name="article[content]" required></textarea>
-				<div class="valid-feedback">
-					Delightful piece!
-				</div>
-			</div>
-			<div class="mb-3">
-				<button class="btn btn-dark">Publish Article</button>
-			</div>
-		</form>
-		<div>
-			<a class="btn btn-dark" href="/articles">All Articles</a>
 		</div>
 	</div>
 </div>

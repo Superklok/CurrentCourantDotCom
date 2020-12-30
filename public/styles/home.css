@@ -1,0 +1,20 @@
+body {
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+	url('https://res.cloudinary.com/superkloklabs/image/upload/v1609158086/CurrentCourantDotCom/currentcourantBG_eznmhi.jpg');
+	background-size: cover;
+	background-position: center;
+	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+.cover-container {
+	max-width: 60vw;
+}
+
+.enterBtn {
+	font-size: 2.6rem;
+}
+
+.hpBtn {
+	color: #FFF;
+}

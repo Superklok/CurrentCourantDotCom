@@ -21,10 +21,11 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
 	await Article.deleteMany({});
-	for(let i = 0; i < 50; i++){
+	for(let i = 0; i < 200; i++){
 		const random30Img1 = Math.floor(Math.random() * 30);
 		const random30Img2 = Math.floor(Math.random() * 30);
 		const article = new Article({
+			// author: 'ObjectId' (In MongoDB Shell, run db.users.find() once a user has been created.)
 			author: '5fe508914e17b637a01bb7ef',
 			title: `${ sample(adjectives) } ${ sample(subjects) }`,
 			content: `${ sample(content) }`,
