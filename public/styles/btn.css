@@ -1,8 +1,15 @@
-button:active,
-button:focus,
-button:hover {
-	outline: none !important;
-	text-decoration: none !important;
+button:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+button.navbar-toggler {
+	border: none;
+	text-decoration: none;
+}
+
+.menu {
+	line-height: 1;
 }
 
 .ccBtn {

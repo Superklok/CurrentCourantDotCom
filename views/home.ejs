@@ -15,26 +15,25 @@
 <body class="d-flex text-center vh-100 text-white bg-dark">
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 		<header class="mb-auto navText">
-			<div>
-				<h3 class="navbar-brand brandFont float-md-start mb-0"><span class="hpBtn">CurrentCourant.com</span></h3>
-				<nav class="nav nav-masthead justify-content-center float-md-end">
-					<a class="ccBtn me-4" href="/articles"><span class="hpBtn">Front Page</span></a>
+			<div class="d-none d-lg-block">
+				<h3 class="navbar-brand brandFont float-start mb-0"><span class="hpBtn">CurrentCourant.com</span></h3>
+				<nav class="nav nav-masthead justify-content-center float-end">
 					<% if(!currentUser) { %>
-					<a class="ccBtn me-4" href="/login"><span class="hpBtn">Login</span></a>
-					<a class="ccBtn me-4" href="/register"><span class="hpBtn">Register</span></a>
+					<a class="ccBtn me-4 mt-2" href="/login"><span class="hpBtn">Login</span></a>
+					<a class="ccBtn me-4 mt-2" href="/register"><span class="hpBtn">Register</span></a>
 					<% } else { %>
-					<a class="ccBtn" href="/logout"><span class="hpBtn">Logout</span></a>
+					<a class="ccBtn me-4 mt-2" href="/logout"><span class="hpBtn">Logout</span></a>
 					<% } %>
 				</nav>
 			</div>
 		</header>
 		<main class="px-3">
-			<h1 class="lgText brandFont"><span class="hpBtn">The Current Courant</span></h1>
+			<h1 class="lgText brandFont mb-3"><span class="hpBtn">The Current Courant</span></h1>
 			<p class="lead smText contentFont"><span class="hpBtn">Welcome to The Current Courant!<br>Content of this website-including articles based<br>on real people or actual businesses-is entirely fictional.</span></p>
 			<a href="/articles" class="ccBtn enterBtn"><span class="hpBtn">Enter</span></a>
 		</main>
 		<footer class="mt-auto">
-			<span class="me-3">&copy; <span class="xsText contentFont">2020 Superklok Labs</span></span>
+			<span class="me-3">&copy; <span class="xsText contentFont">2021 Superklok Labs</span></span>
 			<div class="btn-group dropup">
 				<button type="button" class="dropdown-toggle ccBtn" data-bs-toggle="dropdown" aria-expanded="false">
 					<span id="tmLogo"><span class="hpBtn">TM</span></span>
