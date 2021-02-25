@@ -1,3 +1,15 @@
-.env
-/node_modules
-/img
+# version 0.x.x
+# dependencies
+/v0.x.x/node_modules
+
+# misc
+/v0.x.x/img
+/v0.x.x/.env
+
+# version 1.x.x
+# dependencies
+/v1.x.x/node_modules
+
+# misc
+/v1.x.x/img
+/v1.x.x/.env

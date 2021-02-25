@@ -1,0 +1,14 @@
+version: "2.4"
+
+services:
+  app:
+    image: currentcourantdotcom:0.1.0
+    build: 
+      context: .
+    ports:
+      - "80:80"
+    command: node app.js
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
