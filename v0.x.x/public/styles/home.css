@@ -15,3 +15,8 @@ body {
 .hpBtn:hover {
 	color: #FFF;
 }
+
+.socialBtn {
+	text-decoration: none;
+	padding: 7px;
+}

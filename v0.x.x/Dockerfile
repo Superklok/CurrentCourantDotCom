@@ -1,10 +1,10 @@
-FROM node:14.15.1 as base
+FROM node:17.0.1 as base
 LABEL org.opencontainers.image.vendor="Superklok Labs"
 LABEL org.opencontainers.image.authors="trev@superklok.com"
 LABEL org.opencontainers.image.title="CurrentCourantDotCom"
 LABEL org.opencontainers.image.description="The Current Courant (English)"
-LABEL org.opencontainers.image.version="0.1.0"
-LABEL org.opencontainers.image.created="2021-02-25"
+LABEL org.opencontainers.image.version="0.4.3"
+LABEL org.opencontainers.image.created="2021-10-27"
 LABEL org.opencontainers.image.url="https://hub.docker.com/r/superklok/currentcourantdotcom"
 LABEL org.opencontainers.image.source="https://github.com/Superklok/CurrentCourantDotCom"
 LABEL org.opencontainers.image.licenses="ISC"

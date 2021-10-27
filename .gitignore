@@ -3,7 +3,7 @@
 /v0.x.x/node_modules
 
 # misc
-/v0.x.x/img
+/v0.x.x/assets
 /v0.x.x/.env
 
 # version 1.x.x
@@ -11,5 +11,5 @@
 /v1.x.x/node_modules
 
 # misc
-/v1.x.x/img
+/v1.x.x/assets
 /v1.x.x/.env
