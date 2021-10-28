@@ -1,6 +1,6 @@
 {
   "name": "currentcourantdotcom",
-  "version": "1.19.4",
+  "version": "1.21.1",
   "description": "The Current Courant (English)",
   "main": "app.js",
   "scripts": {
@@ -35,7 +35,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
-    "sanitize-html": "^2.3.0"
+    "pm2": "^5.1.2",
+    "sanitize-html": "^2.5.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

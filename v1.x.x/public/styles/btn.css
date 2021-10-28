@@ -37,3 +37,8 @@ button.navbar-toggler {
 	margin: 0;
 	padding: 0;
 }
+
+.socialBtn {
+	text-decoration: none;
+	padding: 7px;
+}
