@@ -7,7 +7,7 @@ module.exports.renderRegister = (req, res) => {
 module.exports.register = async (req, res) => {
 	try {
 		const { email, username, password } = req.body;
-		const user = new User({ email, username });
+		const user = await new User({ email, username });
 		if(req.body.authorCode === process.env.AUTHOR_CODE){
 		user.isAuthor = true;
 			} else {
