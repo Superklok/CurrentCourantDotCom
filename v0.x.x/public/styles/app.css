@@ -28,4 +28,17 @@
 
 .brandFont {
 	font-family: 'UnifrakturMaguntia', cursive;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+}
+
+.brandFont:hover {
+	text-shadow: -1px 1px 0 rgba(241,147,121,0.8),
+				1px 1px 0 rgba(241,147,121,0.8),
+				1px -1px 0 rgba(241,147,121,0.8),
+				-1px -1px 0 rgba(241,147,121,0.8),
+				0 0 10px rgba(241,147,121,0.8),
+				0 0 15px rgba(241,147,121,0.8),
+				0 0 20px rgba(241,147,121,0.8);
 }

@@ -4,6 +4,7 @@ body {
 	url('../assets/img/currentcourantBG.jpg');
 	background-size: cover;
 	background-position: center;
+	background-color: #6D8589;
 	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
@@ -17,11 +18,28 @@ body {
 
 .hpBtn {
 	color: #FFF;
+	background: transparent;
+	border: none;
 	text-decoration: none;
+	transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	text-shadow: none;
 }
 
 .hpBtn:hover {
 	color: #FFF;
+	text-shadow: -1px 1px 0 rgba(241,147,121,0.8),
+				1px 1px 0 rgba(241,147,121,0.8),
+				1px -1px 0 rgba(241,147,121,0.8),
+				-1px -1px 0 rgba(241,147,121,0.8),
+				0 0 10px rgba(241,147,121,0.8),
+				0 0 15px rgba(241,147,121,0.8),
+				0 0 20px rgba(241,147,121,0.8);
+}
+
+.hpBtnFont {
+	font-family: 'Cinzel', serif;
 }
 
 .hpSocialBtn {
