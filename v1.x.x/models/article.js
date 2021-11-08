@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Review = require('./review');
 const Schema = mongoose.Schema;
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const ImageSchema = new Schema({
 	url: String,
@@ -36,5 +37,7 @@ ArticleSchema.post('findOneAndDelete', async function (doc) {
 		})
 	}
 });
+
+ArticleSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model('Article', ArticleSchema);

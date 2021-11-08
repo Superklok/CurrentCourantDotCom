@@ -2,8 +2,16 @@ const Article = require('../models/article');
 const { cloudinary } = require('../cloudinary');
 
 module.exports.index = async (req, res) => {
-	const articles = await Article.find({});
-	res.render('articles/index', { articles });
+	if (!req.query.page) {
+		const articles = await Article.paginate({}, {});
+		res.render('articles/index', { articles });
+	} else {
+		const { page } = req.query;
+		const articles = await Article.paginate({}, {
+			page
+		});
+		res.status(200).json(articles);
+	}
 }
 
 module.exports.renderNewForm = (req, res) => {

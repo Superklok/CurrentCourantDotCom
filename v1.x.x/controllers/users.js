@@ -1,6 +1,9 @@
 const User = require('../models/user');
 
 module.exports.renderRegister = (req, res) => {
+	if (req.isAuthenticated()) {
+		return res.redirect('/articles');
+	}
 	res.render('users/register');
 }
 
@@ -27,6 +30,9 @@ module.exports.register = async (req, res) => {
 }
 
 module.exports.renderLogin = (req, res) => {
+	if (req.isAuthenticated()) {
+		return res.redirect('/articles');
+	}
 	res.render('users/login');
 }
 

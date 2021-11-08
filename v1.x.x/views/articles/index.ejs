@@ -4,8 +4,8 @@
 <hr>
 <a class="ccBtn navText ms-2 me-3 my-2" href="/articles/new">Contribute</a>
 <hr class="mb-5">
-<div class="row">
-	<% for (let article of articles){ %>
+<div id="articles-container" class="row">
+	<% for (let article of articles.docs){ %>
 	<div class="col-md-6 col-lg-4 col-xl-3">
 		<div class="card mb-3">
 			<% if (article.images.length) { %>
@@ -22,3 +22,8 @@
 	</div>
 	<% } %>
 </div>
+<div class="text-center my-4">
+	<a id="paginate" class="ccBtn mdBtn" href="/articles?page=<%= articles.nextPage %>">View More</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/scripts/pagination.js"></script>
