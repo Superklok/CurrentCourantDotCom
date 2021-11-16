@@ -1,5 +1,5 @@
-const Article = require('../models/article');
-const { cloudinary } = require('../cloudinary');
+const Article        = require('../models/article'),
+	  { cloudinary } = require('../cloudinary');
 
 module.exports.index = async (req, res) => {
 	if (!req.query.page) {
@@ -27,7 +27,7 @@ module.exports.createArticle = async (req, res, next) => {
 	res.redirect(`/articles/${ article._id }`);
 }
 
-module.exports.showArticle = async(req, res) => {
+module.exports.showArticle = async (req, res) => {
 	const article = await Article.findById(req.params.id).populate({
 		path: 'reviews',
 		populate: {

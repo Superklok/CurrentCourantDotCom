@@ -2,25 +2,27 @@ if (process.env.NODE_ENV !== "production") {
 	require('dotenv').config();
 }
 
-const express = require('express');
-const path = require('path');
-const mongoose = require('mongoose');
-const ejsMate = require('ejs-mate');
-const session = require('express-session');
-const flash = require('connect-flash');
-const ExpressError = require('./HELPeR/ExpressError');
-const methodOverride = require('method-override');
-const passport = require('passport');
-const LocalStrategy = require('passport-local');
-const User = require('./models/user');
-const helmet = require('helmet');
-const mongoSanitize = require('express-mongo-sanitize');
-const userRoutes = require('./routes/users');
-const articleRoutes = require('./routes/articles');
-const reviewRoutes = require('./routes/reviews');
-const MongoDBStore = require('connect-mongo')(session);
+const express        = require('express'),
+	  path           = require('path'),
+	  mongoose       = require('mongoose'),
+	  ejsMate        = require('ejs-mate'),
+	  session        = require('express-session'),
+	  flash          = require('connect-flash'),
+	  ExpressError   = require('./HELPeR/ExpressError'),
+	  methodOverride = require('method-override'),
+	  passport       = require('passport'),
+	  LocalStrategy  = require('passport-local'),
+	  User           = require('./models/user'),
+	  helmet         = require('helmet'),
+	  mongoSanitize  = require('express-mongo-sanitize'),
+	  userRoutes     = require('./routes/users'),
+	  articleRoutes  = require('./routes/articles'),
+	  reviewRoutes   = require('./routes/reviews'),
+	  MongoDBStore   = require('connect-mongo')(session);
+
 // Production Database
 const dbUrl = process.env.DB_URL;
+
 // Development Database
 // const dbUrl = 'mongodb://localhost:27017/currentcourantdotcom';
 
@@ -39,14 +41,15 @@ db.once("open", () => {
 
 const app = express();
 
-app.engine('ejs', ejsMate)
+app.engine('ejs', ejsMate);
+
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(mongoSanitize())
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(mongoSanitize());
 
 const store = new MongoDBStore({
 	url: dbUrl,
@@ -128,11 +131,11 @@ app.use('/articles', articleRoutes);
 app.use('/articles/:id/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
-	res.render('home')
+	res.render('home');
 });
 
 app.all('*', (req, res, next) => {
-	next(new ExpressError('Page Not Found', 404))
+	next(new ExpressError('Page Not Found', 404));
 });
 
 app.use((err, req, res, next) => {
@@ -143,5 +146,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-	console.log(`Serving on port ${ port }`)
+	console.log(`Serving on port ${ port }`);
 });

@@ -1,11 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const articles = require('../controllers/articles');
-const catchAsync = require('../HELPeR/catchAsync');
-const { isLoggedIn, isAuthor, validateArticle } = require('../middleware');
-const multer = require('multer');
-const { storage } = require('../cloudinary');
-const upload = multer({ storage });
+const express                                   = require('express'),
+	  router                                    = express.Router(),
+	  articles                                  = require('../controllers/articles'),
+	  catchAsync                                = require('../HELPeR/catchAsync'),
+	  { isLoggedIn, isAuthor, validateArticle } = require('../middleware'),
+	  multer                                    = require('multer'),
+	  { storage }                               = require('../cloudinary'),
+	  upload                                    = multer({ storage });
 
 router.route('/')
 	.get(catchAsync(articles.index))

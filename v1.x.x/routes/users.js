@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const passport = require('passport');
-const catchAsync = require('../HELPeR/catchAsync');
-const users = require('../controllers/users');
+const express    = require('express'),
+	  router     = express.Router(),
+	  passport   = require('passport'),
+	  catchAsync = require('../HELPeR/catchAsync'),
+	  users      = require('../controllers/users');
 
 router.route('/register')
 	.get(users.renderRegister)

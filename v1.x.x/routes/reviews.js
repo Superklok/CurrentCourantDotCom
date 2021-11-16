@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router({mergeParams: true});
-const {validateReview, isLoggedIn, isReviewer} = require('../middleware');
-const catchAsync = require('../HELPeR/catchAsync');
-const reviews = require('../controllers/reviews');
+const express                                  = require('express'),
+	  router                                   = express.Router({mergeParams: true}),
+	  {validateReview, isLoggedIn, isReviewer} = require('../middleware'),
+	  catchAsync                               = require('../HELPeR/catchAsync'),
+	  reviews                                  = require('../controllers/reviews');
 
 router.post('/', 
 	isLoggedIn, 

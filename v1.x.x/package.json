@@ -1,6 +1,6 @@
 {
   "name": "currentcourantdotcom",
-  "version": "1.23.4",
+  "version": "1.23.5",
   "description": "The Current Courant (English)",
   "main": "app.js",
   "scripts": {

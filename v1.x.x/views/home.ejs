@@ -37,196 +37,40 @@
 		<footer class="footer mt-auto">
 			<div class="container d-none d-lg-block">
 				<div class="d-flex align-items-center">
-					<a class="hpBtn" href="http://superkloklabs.com/">
-						<span class="me-3">&copy; <span class="xsText contentFont">2021 Superklok Labs</span></span>
-					</a>
-					<div class="btn-group dropup">
-						<button type="button" class="dropdown-toggle hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span id="tmLogo"><span>TM</span></span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li id="tmDotLink" class="my-0 py-0">
-								<a class="ccBtn mx-4" href="http://www.trevmorin.com/"><span class="tmLgText">T</span><span class="tmSmText">rev</span><span class="tmLgText">M</span><span class="tmSmText">orin</span><span class="tmComText">.COM</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.superklok.com/"><span id="slText">Superklok.com</span></a>
-							</li>
-							<li class="mb-2 pb-1">
-								<a class="ccBtn mx-4" href="http://www.jetwheelreel.com/"><span id="jwrText">JetWheelReel.com</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.swingcars.net/"><span id="scText">Swingcars.net</span></a>
-							</li>
-							<li class="mt-0 mb-3">
-								<a class="ccBtn mx-4" href="http://www.sliderpiler.com/"><span id="spText">SliderPiler.com</span></a>
-							</li>
-						</ul>
-					</div>
-					<div class="btn-group dropup ms-0">
-						<button type="button" class="dropdown-toggle smText hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="hpBtnFont">English</span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li class="mx-4 my-3 px-3">
-								<a class="smText ccBtn" href="http://www.currentcourant.ca/">Fran&#231;ais</a>
-							</li>
-						</ul>
-					</div>
+					<%- partial('partials/hpbuttons/copyright') %>
+					<%- partial('partials/hpbuttons/trevmorin') %>
 					<div class="ms-auto">
-						<a class="hpSocialBtn ps-0" href="https://github.com/Superklok/CurrentCourantDotCom/tree/main/v1.x.x">
-							<img src="../assets/img/icons/iconGH.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.youtube.com/channel/UCNnuDVs9xXqT5PrbL-uP7Vw/featured">
-							<img src="../assets/img/icons/iconYT.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.tiktok.com/@superklok?">
-							<img src="../assets/img/icons/iconTT.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.instagram.com/superkloklabs/">
-							<img src="../assets/img/icons/iconIG.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://soundcloud.com/user-166803901">
-							<img src="../assets/img/icons/iconSC.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://audiomack.com/superklok/uploads">
-							<img class="rounded" src="../assets/img/icons/iconAM.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://superklok.bandcamp.com/">
-							<img class="rounded" src="../assets/img/icons/iconBC.png" alt="">
-						</a>
+						<%- partial('partials/hpbuttons/social4') %>
+						<%- partial('partials/hpbuttons/social3') %>
 					</div>
 				</div>
 			</div>
 			<div class="container d-none d-sm-block d-lg-none">
 				<div class="d-flex align-items-center pb-1">
-					<div class="btn-group dropup">
-						<button type="button" class="dropdown-toggle hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span id="tmLogo"><span>TM</span></span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li id="tmDotLink" class="my-0 py-0">
-								<a class="ccBtn mx-4" href="http://www.trevmorin.com/"><span class="tmLgText">T</span><span class="tmSmText">rev</span><span class="tmLgText">M</span><span class="tmSmText">orin</span><span class="tmComText">.COM</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.superklok.com/"><span id="slText">Superklok.com</span></a>
-							</li>
-							<li class="mb-2 pb-1">
-								<a class="ccBtn mx-4" href="http://www.jetwheelreel.com/"><span id="jwrText">JetWheelReel.com</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.swingcars.net/"><span id="scText">Swingcars.net</span></a>
-							</li>
-							<li class="mt-0 mb-3">
-								<a class="ccBtn mx-4" href="http://www.sliderpiler.com/"><span id="spText">SliderPiler.com</span></a>
-							</li>
-						</ul>
-					</div>
-					<div class="btn-group dropup ms-0">
-						<button type="button" class="dropdown-toggle smText hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="hpBtnFont">English</span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li class="mx-4 my-3 px-3">
-								<a class="smText ccBtn" href="http://www.currentcourant.ca/">Fran&#231;ais</a>
-							</li>
-						</ul>
-					</div>
+					<%- partial('partials/hpbuttons/trevmorin') %>
 					<div class="ms-auto">
-						<a class="hpSocialBtn ps-0" href="https://github.com/Superklok/CurrentCourantDotCom/tree/main/v1.x.x">
-							<img src="../assets/img/icons/iconGH.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.youtube.com/channel/UCNnuDVs9xXqT5PrbL-uP7Vw/featured">
-							<img src="../assets/img/icons/iconYT.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.tiktok.com/@superklok?">
-							<img src="../assets/img/icons/iconTT.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://www.instagram.com/superkloklabs/">
-							<img src="../assets/img/icons/iconIG.png" alt="">
-						</a>
+						<%- partial('partials/hpbuttons/social4') %>
 					</div>
 				</div>
 				<div class="d-flex align-items-center">
-					<a class="hpBtn" href="http://superkloklabs.com/">
-						<span class="me-3">&copy; <span class="xsText contentFont">2021 Superklok Labs</span></span>
-					</a>
+					<%- partial('partials/hpbuttons/copyright') %>
 					<div class="ms-auto pb-1">
-						<a class="hpSocialBtn" href="https://soundcloud.com/user-166803901">
-							<img src="../assets/img/icons/iconSC.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://audiomack.com/superklok/uploads">
-							<img class="rounded" src="../assets/img/icons/iconAM.png" alt="">
-						</a>
-						<a class="hpSocialBtn" href="https://superklok.bandcamp.com/">
-							<img class="rounded" src="../assets/img/icons/iconBC.png" alt="">
-						</a>
+						<%- partial('partials/hpbuttons/social3') %>
 					</div>
 				</div>
 			</div>
 			<div class="d-block d-sm-none">
 				<div class="d-flex align-items-center justify-content-center pb-2">
-					<div class="btn-group dropup">
-						<button type="button" class="dropdown-toggle hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span id="tmLogo"><span>TM</span></span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li id="tmDotLink" class="my-0 py-0">
-								<a class="ccBtn mx-4" href="http://www.trevmorin.com/"><span class="tmLgText">T</span><span class="tmSmText">rev</span><span class="tmLgText">M</span><span class="tmSmText">orin</span><span class="tmComText">.COM</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.superklok.com/"><span id="slText">Superklok.com</span></a>
-							</li>
-							<li class="mb-2 pb-1">
-								<a class="ccBtn mx-4" href="http://www.jetwheelreel.com/"><span id="jwrText">JetWheelReel.com</span></a>
-							</li>
-							<li class="mt-0 mb-1 pt-0 pb-1">
-								<a class="ccBtn mx-4" href="http://www.swingcars.net/"><span id="scText">Swingcars.net</span></a>
-							</li>
-							<li class="mt-0 mb-3">
-								<a class="ccBtn mx-4" href="http://www.sliderpiler.com/"><span id="spText">SliderPiler.com</span></a>
-							</li>
-						</ul>
-					</div>
-					<div class="btn-group dropup ms-0">
-						<button type="button" class="dropdown-toggle smText hpBtn" data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="hpBtnFont">English</span>
-						</button>
-						<ul class="dropdown-menu shadow">
-							<li class="mx-4 my-3 px-3">
-								<a class="smText ccBtn" href="http://www.currentcourant.ca/">Fran&#231;ais</a>
-							</li>
-						</ul>
-					</div>
+					<%- partial('partials/hpbuttons/trevmorin') %>
 				</div>
 				<div class="d-flex align-items-center justify-content-center pb-2">
-					<a class="hpBtn" href="http://superkloklabs.com/">
-						<span class="me-3">&copy; <span class="xsText contentFont">2021 Superklok Labs</span></span>
-					</a>
+					<%- partial('partials/hpbuttons/copyright') %>
 				</div>
 				<div class="d-flex align-items-center justify-content-center pt-2">
-					<a class="socialBtn" href="https://github.com/Superklok/CurrentCourantDotCom/tree/main/v1.x.x">
-						<img src="../assets/img/icons/iconGH.png" alt="">
-					</a>
-					<a class="socialBtn" href="https://www.youtube.com/channel/UCNnuDVs9xXqT5PrbL-uP7Vw/featured">
-						<img src="../assets/img/icons/iconYT.png" alt="">
-					</a>
-					<a class="socialBtn" href="https://www.tiktok.com/@superklok?">
-						<img src="../assets/img/icons/iconTT.png" alt="">
-					</a>
-					<a class="socialBtn" href="https://www.instagram.com/superkloklabs/">
-						<img src="../assets/img/icons/iconIG.png" alt="">
-					</a>
+					<%- partial('partials/hpbuttons/social4') %>
 				</div>
 				<div class="d-flex align-items-center justify-content-center pt-1">
-					<a class="socialBtn" href="https://soundcloud.com/user-166803901">
-						<img src="../assets/img/icons/iconSC.png" alt="">
-					</a>
-					<a class="socialBtn" href="https://audiomack.com/superklok/uploads">
-						<img class="rounded" src="../assets/img/icons/iconAM.png" alt="">
-					</a>
-					<a class="socialBtn" href="https://superklok.bandcamp.com/">
-						<img class="rounded" src="../assets/img/icons/iconBC.png" alt="">
-					</a>
+					<%- partial('partials/hpbuttons/social3') %>
 				</div>
 			</div>
 		</footer>

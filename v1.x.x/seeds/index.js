@@ -2,14 +2,16 @@ if (process.env.NODE_ENV !== "production") {
 	require('dotenv').config();
 }
 
-const mongoose = require('mongoose');
-const { adjectives, subjects } = require('./articleTitles');
-const { content } = require('./articleContent');
-const articleImg1 = require('./articleImg1');
-const articleImg2 = require('./articleImg2');
-const Article = require('../models/article');
+const mongoose                 = require('mongoose'),
+	  { adjectives, subjects } = require('./articleTitles'),
+	  { content }              = require('./articleContent'),
+	  articleImg1              = require('./articleImg1'),
+	  articleImg2              = require('./articleImg2'),
+	  Article                  = require('../models/article');
+
 // Production Database
 // const dbUrl = process.env.DB_URL;
+
 // Development Database
 const dbUrl = 'mongodb://localhost:27017/currentcourantdotcom';
 
@@ -33,11 +35,15 @@ const seedDB = async () => {
 		const random30Img1 = Math.floor(Math.random() * 30);
 		const random30Img2 = Math.floor(Math.random() * 30);
 		const article = new Article({
-			// author: 'ObjectId' (In MongoDB Shell, run db.users.find() once a user has been created.)
+
+			// **author: 'ObjectId' (In MongoDB Shell, run db.users.find() once a user has been created.)**
+			
 			// Production Database User
 			// author: '5ff38869ea3eb6036c3ddcc7',
+
 			// Development Database User
 			author: '5fe508914e17b637a01bb7ef',
+
 			title: `${ sample(adjectives) } ${ sample(subjects) }`,
 			content: `${ sample(content) }`,
 			images: [

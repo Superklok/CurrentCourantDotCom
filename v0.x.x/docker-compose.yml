@@ -2,7 +2,7 @@ version: "2.4"
 
 services:
   app:
-    image: currentcourantdotcom:0.5.6
+    image: currentcourantdotcom:0.5.7
     build: 
       context: .
     ports:
