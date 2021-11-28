@@ -1,4 +1,4 @@
-# The Current Courant (English Version) v1.23.6
+# The Current Courant (English Version) v1.23.7
 <br />
 
 ## Basic Root User Deployment Guide For App Evaluation
