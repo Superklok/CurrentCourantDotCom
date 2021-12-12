@@ -2,12 +2,13 @@ version: "3.8"
 
 services:
   app:
-    image: superklok/currentcourantdotcom:0.5.12
+    image: superklok/currentcourantdotcom:0.5.14
     build: 
       context: .
+      target: prod
     ports:
       - "80:80"
-    command: node app.js
+    command: npm start
     volumes:
       - .:/app
     environment:
