@@ -1,0 +1,49 @@
+@media (prefers-color-scheme: dark) {
+	.navText {
+	 	font-size: 1.7rem;
+	}
+
+	.tmLgText {
+		font-family: 'Lacquer', cursive;
+		font-size: 2.5rem;
+	}
+
+	.tmSmText {
+		font-family: 'Sedgwick Ave Display', cursive;
+		font-size: 1.7rem;
+	}
+
+	.tmComText {
+		font-family: 'Caveat Brush', cursive;
+		font-size: 1.6rem;
+	}
+
+	.navbar-brand {
+		font-size: 2.4rem;
+	}
+
+	#slText {
+		font-family: 'VT323', monospace;
+		font-size: 2.6rem;
+	}
+
+	#scText {
+		font-family: 'Lobster', cursive;
+		font-size: 1.9rem;
+	}
+
+	#jwrText {
+		font-family: 'Righteous', cursive;
+		font-size: 1.7rem;
+	}
+
+	#spText {
+		font-family: 'Metal Mania', cursive;
+		font-size: 1.9rem;
+	}
+
+	#tmLogo {
+		font-family: 'Lacquer', cursive;
+		font-size: 2.2rem;
+	}
+}

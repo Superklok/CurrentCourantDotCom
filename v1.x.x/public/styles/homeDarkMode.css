@@ -1,0 +1,68 @@
+@media (prefers-color-scheme: dark) {
+	body {
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url('../assets/img/currentcourantBG.jpg') no-repeat center center fixed;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-color: #445356;
+		text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+	}
+
+	body:after {
+		content:"";
+		position:fixed;
+		top:0;
+		height:100vh;
+		left:0;
+		right:0;
+		background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+		url('../assets/img/currentcourantBG.jpg') center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-color: #445356;
+		z-index:-1;
+	}
+
+	.cover-container {
+		max-width: 75vw;
+	}
+
+	.enterBtn {
+		font-size: 2.6rem;
+	}
+
+	.hpBtn {
+		color: #FFF;
+		background: transparent;
+		border: none;
+		text-decoration: none;
+		transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		text-shadow: none;
+	}
+
+	.hpBtn:hover {
+		color: #FFF;
+		text-shadow: -1px 1px 0 rgba(241,147,121,0.8),
+					1px 1px 0 rgba(241,147,121,0.8),
+					1px -1px 0 rgba(241,147,121,0.8),
+					-1px -1px 0 rgba(241,147,121,0.8),
+					0 0 10px rgba(241,147,121,0.8),
+					0 0 15px rgba(241,147,121,0.8),
+					0 0 20px rgba(241,147,121,0.8);
+	}
+
+	.hpBtnFont {
+		font-family: 'Cinzel', serif;
+	}
+
+	.hpSocialBtn {
+		text-decoration: none;
+		padding: 4px;
+	}
+}
